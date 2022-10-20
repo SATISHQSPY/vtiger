@@ -98,7 +98,7 @@ return parentHandle;
 public void AllwinHandle(String ParentHAND) {
 Set<String> allWinHandles=	driver.getWindowHandles();
 System.out.println("All window Handles are:");
-for (String AllWindow:AllWinHand) {
+for (String AllWindow:AllWindow) {
 	System.out.println(AllWindow);
 if (!ParentHAND:AllWindow) {
 	driver.switchTo().window(AllWindow);

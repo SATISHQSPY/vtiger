@@ -9,44 +9,44 @@ import org.openqa.selenium.support.PageFactory;
 import Genericutility.WebDriverUtility;
 
 public class NEWcontactpage {
-	
+
 	WebDriver driver;
-	public WebDriverUtility webDriverUtility=new WebDriverUtility(driver);
-	
+	public WebDriverUtility webDriverUtility = new WebDriverUtility(driver);
+
 	public NEWcontactpage(WebDriver driver) {
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
 	}
-	
-@FindBy(name="salutationtype")
-private WebElement DD;
 
-@FindBy(name="firstname")
-private WebElement FirstNameTF;
+	@FindBy(name = "salutationtype")
+	private WebElement DD;
 
-@FindBy(name="lastname")
-private WebElement LastNameTF;
+	@FindBy(name = "firstname")
+	private WebElement FirstNameTF;
 
-@FindBy(xpath = "//img[@src='themes/softed/images/select.gif']")
-private WebElement ORGcreateBTN;
+	@FindBy(name = "lastname")
+	private WebElement LastNameTF;
 
-@FindBy(name="[name='button']")
-private WebElement Save;
+	@FindBy(xpath = "//img[@src='themes/softed/images/select.gif']")
+	private WebElement ORGcreateBTN;
 
-public WebElement getDD() {
-	return DD;
-}
+	@FindBy(name = "[name='button']")
+	private WebElement Save;
 
-public WebElement getFirstName() {
-	return FirstNameTF;
-}
+	public WebElement getDD() {
+		return DD;
+	}
 
-public WebElement getLastName() {
-	return LastNameTF;
-}
+	public WebElement getFirstName() {
+		return FirstNameTF;
+	}
 
-public WebElement getORGcreateBTN() {
-	return ORGcreateBTN;
-}
+	public WebElement getLastName() {
+		return LastNameTF;
+	}
+
+	public WebElement getORGcreateBTN() {
+		return ORGcreateBTN;
+	}
 
 public WebElement getSave() {
 	return Save;

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ORGinfoPAGEclass {
 @FindBy(className="dvHeaderText")
 private WebElement hTEXT;
-}
+
 
 public ORGinfoPAGEClass(WebDriver driver) {
 PageFactory.initElements(driver,this);
