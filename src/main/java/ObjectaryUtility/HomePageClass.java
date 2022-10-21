@@ -49,4 +49,16 @@ public class HomePageClass {
 		SignOPTIONadmin.click();
 	}
 
+	public WebElement getDocumentsBtn() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void actionOnAdmin(WebDriver driver2) {
+		// TODO Auto-generated method stub
+		Actions action = new Actions(driver);
+		action.moveToElement(SignOPTIONadmin).build().perform();
+		SignOPTIONadmin.click();
+	}
+
 }

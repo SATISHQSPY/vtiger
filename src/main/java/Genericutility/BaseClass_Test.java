@@ -11,8 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-
-
+import ObjectaryUtility.HomePageClass;
+import ObjectaryUtility.LOGINpageClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass_Test {
@@ -20,12 +20,12 @@ public class BaseClass_Test {
 	public static WebDriver sdriver;
 	PropertyFileUtility propertyFileUtility=new PropertyFileUtility();
 	
-	@BeforeSuite
+	@BeforeSuite(groups = {"smoke","integration","regression"})
 	public void CONNECTINGdatabase() {
 	System.out.println("CONNECTING TO DB"); 
  }
 	
-	@AfterSuite
+	@AfterSuite(groups = {"smoke","integration","regression"})
 	public void ENDINGdatabase(){
 		System.out.println("Disconnecting TO DB");
 	}
@@ -33,28 +33,45 @@ public class BaseClass_Test {
 	
 	//**LAUNCH BROWSER**//
 	
-		@BeforeClass
-	public void LAUNCHBROWSER () {
+		@BeforeClass(groups = {"smoke","integration","regression"})
+	public void LAUNCHBROWSER () throws Throwable {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
+		
+		sdriver=driver;
+		 WebDriverUtility webDriverUtility=new WebDriverUtility(driver);
+		webDriverUtility.Maximize();
+		webDriverUtility.implicitywait();
+		String uRl = propertyFileUtility.readDatafromPropertyFile("url");
+		driver.get(uRl);
 	
 	System.out.println("OPEN BROWSER");	
 	}
 	
 	
-		@AfterClass
-	public void CLOSEBROWSER(){
+		@AfterClass(groups = {"smoke","integration","regression"})
+	public void CLOSEBROWSER () {
+			driver.close();
 	System.out.println("CLOSE BROWSER");	
 	}
 	
 	
 		@BeforeMethod
-	public void method() {
+			(groups = {"smoke","integration","regression"})
+			public void loginIntoPage() throws Throwable
+			{
+				String uName = propertyFileUtility.readDatafromPropertyFile("username");
+				String pWd = propertyFileUtility.readDatafromPropertyFile("password");
+				LOGINpageClass loginPageClass=new LOGINpageClass(driver);
+				loginPageClass.LOGIN(uName, pWd);
 		System.out.println(" ");
 	}
 	
-		@AfterMethod
+		@AfterMethod(groups = {"smoke","integration","regression"})
 	public void method1() {
+			HomePageClass homePageClass = new HomePageClass(driver);
+			homePageClass.actionOnAdmin(driver);
+			homePageClass.getSignOUT().click();
 		System.out.println(" ");
 
 	}

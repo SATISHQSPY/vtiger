@@ -30,7 +30,7 @@ int sn=wb.getSheet(sheetNum).getLastRowNum();
 return sn;
 }
 
-public int getLastRowCount(String sheetNum) {
+public int getLastRowCount2(String sheetNum) throws Throwable {
 	FileInputStream fis = new FileInputStream("./COMdata/COMDATEXC.xlsx");
 	Workbook wb = WorkbookFactory.create(fis);
 	return wb.getSheet(sheetNum).getLastRowNum();
