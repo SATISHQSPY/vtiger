@@ -104,6 +104,7 @@ if (!ParentHAND:AllWindow) {
 	driver.switchTo().window(AllWindow);
 	break;
 	
+
 }
 else {
 		driver.switchTo().window(ParentHAND);
@@ -133,6 +134,9 @@ public void MouseOVERaction(WebElement variable) {
 	WebElement locatedElement =Wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	locatedElement.click();
 	}
+
+
+
 }
 
 }

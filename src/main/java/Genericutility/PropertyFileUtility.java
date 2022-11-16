@@ -13,4 +13,13 @@ public String Fromproertyfile(String key) throws Throwable
 	String value =p.getProperty(key);//adding as parameter
 	return value; //return type change to string
 }
+
+public String readDatafromPropertyFile(String string) throws Throwable {
+	FileInputStream fis = new FileInputStream("./COMdata/commonDATA.properties");
+	Properties p = new Properties();
+	p.load(fis);
+	String value =p.getProperty(string);//adding as parameter
+	return value; //return type change to string
+	
+}
 }

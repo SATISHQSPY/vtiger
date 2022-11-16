@@ -1,5 +1,7 @@
 package tESTNGpavanSir;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,15 +15,17 @@ public void test1() {
 public void test2() {
 	String name1="bharat";
 	String name2="satish";
-	Assert.assertEquals(name1, name2);
+	AssertJUnit.assertEquals(name1, name2);
 	System.out.println("pavan");
 	
 }
 
+@Test
 public void test3() {
 	System.out.println("DEMO3");
 }
 
+@Test
 public void test4() {
 	System.out.println("DEMO4");
 }

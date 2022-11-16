@@ -2,8 +2,11 @@ package tESTNGpavanSir;
 
 import org.testng.annotations.Test;
 
-public class SampleClass extends AnnotationsmethodTest{
-	@Test
+import Genericutility.BaseClass_Test;
+
+
+public class SampleClass extends BaseClass_Test{
+	@Test(groups ="smoke" )
 	public void a() {
 		System.out.println("97");
 	}

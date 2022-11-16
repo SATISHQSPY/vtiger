@@ -1,5 +1,7 @@
 package tESTNGpavanSir;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -16,7 +18,7 @@ public class AmazonClass {
 		driver = new ChromeDriver();
 		driver.get("https://amazon.com");
 		
-		Assert.assertEquals(false, true);
+		AssertJUnit.assertEquals(false, true);
 	}
 
 	@Test
@@ -27,7 +29,7 @@ public class AmazonClass {
 
 		driver.get("https://flipkart.com");
 		System.out.println(driver.getTitle());
-		Assert.assertEquals(false, true);
+		AssertJUnit.assertEquals(true, true);
 
 	}
 }
